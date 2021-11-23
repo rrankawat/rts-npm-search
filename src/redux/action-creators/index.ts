@@ -20,7 +20,7 @@ export const searchRepositories = (term: string) => {
       const names = data.objects.map((result: any) => result.package.name)
 
       dispatch({ type: ActionType.SEARCH_REPOSITORIES_SUCCESS, payload: names })
-    } catch (err) {
+    } catch (err: any) {
       dispatch({
         type: ActionType.SEARCH_REPOSITORIES_ERROR,
         payload: err.message,
